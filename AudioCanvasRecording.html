@@ -1,24 +1,20 @@
-<title>Audio + Canvas2D/HTML recording using RecordRTC!</title>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <title>Audio + Canvas2D/HTML recording using RecordRTC!</title>
 <style>
     body {overflow-x:hidden;background: rgb(233, 233, 233);}
     #elementToShare {
         background: rgb(233, 233, 233);
-        font-size: 2em;
-        height: 100%;
+        height: 75%;
         left: 0;
-        padding: 0 1em;
+        padding: 0 2px;
         position: absolute;
         top: 0;
-        width: 100%;
+        width: 75%;
     }
-
-    input, textarea {
-        border: 1px solid red;
-        font-size: 1em;
-        outline: none;
-        padding: .3em .8em;
-    }
-
     button, input[type=button] {
         -moz-border-radius: 3px;
         -moz-transition: none;
@@ -58,21 +54,23 @@
     a:active { color: #000; }
 </style>
 
-<div id="elementToShare" contenteditable style="margin-top:3px;">
+<div id="elementToShare" style="margin-top:8px;">
+  <video autoplay="true" id="videoElement"></video>
 </div>
      
 <div style="position: fixed;top;0;left: 20%;right: 20%;text-align: center;">
     <button id="start" contenteditable="false">Start </button>
     <button id="stop" disabled contenteditable="false">Stop</button>
    <h2>
-		Audio + Canvas2D/HTML recording <br />
-	</h2>
+        AudioCanvas2D/HTMLrecording <br />
+    </h2>
 </div>
 
 <script src="https://www.webrtc-experiment.com/screenshot.js"> </script>
 <script src="https://www.webrtc-experiment.com/RecordRTC.js"> </script>
-
-<script>
+</head>
+<body>
+      <script>
 var elementToShare = document.getElementById('elementToShare');
 var canvasRecorder = RecordRTC(elementToShare, {
     type: 'canvas'
@@ -98,7 +96,6 @@ document.getElementById('stop').onclick = function() {
     recordAudio.stopRecording(function() {
         canvasRecorder.stopRecording(function() {
         convertStreams(canvasRecorder.getBlob(), recordAudio.getBlob());
-            log('<a href="'+ workerPath +'" download="ffmpeg-asm.js">ffmpeg-asm.js</a> file download started. It is about 18MB in size; please be patient!');
         });
     });
     
@@ -155,16 +152,12 @@ function convertStreams(videoBlob, audioBlob) {
     worker.onmessage = function(event) {
         var message = event.data;
         if (message.type == "ready") {
-            log('<a href="'+ workerPath +'" download="ffmpeg-asm.js">ffmpeg-asm.js</a> file has been loaded.');
             workerReady = true;
             if (buffersReady)
                 postMessage();
         } else if (message.type == "stdout") {
-            log(message.data);
         } else if (message.type == "start") {
-            log('<a href="'+ workerPath +'" download="ffmpeg-asm.js">ffmpeg-asm.js</a> file received ffmpeg command.');
         } else if (message.type == "done") {
-            log(JSON.stringify(message));
 
             var result = message.data[0];
             log(JSON.stringify(result));
@@ -201,12 +194,31 @@ function convertStreams(videoBlob, audioBlob) {
 var h2 = document.querySelector('h2');
 
 function PostBlob(blob) {
-    h2.innerHTML = '<a href="' + URL.createObjectURL(blob) + '" target="_blank" download="Recorded Audio+Canvas File.mp4">Download Recorded Audio+Canvas file in MP4 container and play in VLC player!</a>';
-    h2.setAttribute('contenteditable', 'false');
+    h2.innerHTML = '<a href="' + URL.createObjectURL(blob) + '" target="_blank" download="RecordedAudioCanvas.mp4">Download Recorded Audio+Canvas file in MP4 container and play in VLC player!</a>';
+    //h2.setAttribute('contenteditable', 'false');
 }
 
 function log(message) {
     h2.innerHTML = message;
     console.log(message);
 }
-</script>
+  var video = document.querySelector("#videoElement");
+         
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+         
+        if (navigator.getUserMedia) {      
+            navigator.getUserMedia({video: true, audio: false}, handleVideo, videoError);
+        }
+         
+        function handleVideo(stream) {
+            video.src = window.URL.createObjectURL(stream);
+        }
+         
+        function videoError(e) {
+            alert('ERROR');
+        }
+
+
+  </script>
+</body>
+</html>
