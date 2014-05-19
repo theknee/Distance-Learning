@@ -1,0 +1,129 @@
+<style type="text/css">
+	.camera1{
+		background-color: green;
+		position: absolute;
+		width: 300px;
+		height: 300px;
+		top: 50px;
+		left: 50px;
+	}
+
+	.camera2{
+		background-color: yellow;
+		position: absolute;
+		width: 300px;
+		height: 300px;
+		top: 380px;
+		left: 50px;
+	}
+	.ppt {
+	    margin: 0px auto;
+	    width: 500px;
+	    height: 500px;
+	    border: 10px #333 solid;
+		}
+
+</style>
+
+
+<div class="camera1" id="camera1"></div>
+<div class="camera2" id="camera2"></div>
+
+<div class="ppt" id="ppt"></div>
+
+<br/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<button onclick="camera1(this)">camera1</button>
+<button onclick="camera2(this)">camera2</button>
+<button onclick="ppt(this)">ppt</button>
+
+
+
+
+<script type="text/javascript">
+function camera1(element)
+{
+	var camera1 = document.getElementById("camera1"),
+		camera2 = document.getElementById("camera2"),
+		ppt = document.getElementById("ppt"),
+		pptClass = ppt.className,
+		camera1Class = camera1.className,
+		camera2Class = camera2.className;
+	var temp;
+	//alert(camera1Class);
+	if (camera1Class=="camera1") 
+	{
+		ppt.className = camera1Class;
+		if(pptClass=="camera2"){
+			camera2.className = pptClass;
+			camera1.className = camera2Class;
+			alert("sud");
+		}
+		else
+			camera1.className = pptClass;
+
+
+	}
+	else if(camera2Class=="camera1")
+	{
+		ppt.className= camera2Class;
+		camera2.className= pptClass;
+	}
+
+}
+function camera2(element)
+{
+	var camera1 = document.getElementById("camera1"),
+		camera2 = document.getElementById("camera2"),
+		ppt = document.getElementById("ppt"),
+		pptClass = ppt.className,
+		camera1Class = camera1.className,
+		camera2Class = camera2.className;
+	var temp;
+	if (camera1Class=="camera2") 
+	{
+		
+		ppt.className = camera1Class;
+		camera1.className = pptClass;
+
+	}
+	else if(camera2Class=="camera2")
+	{
+		ppt.className = camera2Class;
+		camera2.className = pptClass;
+	}
+
+}
+function ppt(element)
+{
+	var camera1 = document.getElementById("camera1"),
+		camera2 = document.getElementById("camera2"),
+		ppt = document.getElementById("ppt"),
+		pptClass = ppt.className,
+		camera1Class = camera1.className,
+		camera2Class = camera2.className;
+	var temp;
+	if (camera1Class=="ppt") 
+	{
+		
+		ppt.className = camera1Class;
+		camera1.className = pptClass;
+
+	}
+	else if(camera2Class=="ppt")
+	{
+		ppt.className = camera2Class;
+		camera2.className = pptClass;
+	}
+	
+}
+
+
+</script>

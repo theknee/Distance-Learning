@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Prototype </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="datepicker.css" rel="stylesheet" media="screen">
+
+ 
+  </head>
+  <body>
+  <div class="container">
+    <div class="container" style="margin: 10px;">
+      <div class="row">
+        <h2> Registration </h2>
+      </div>
+    <!-- <div class="col-lg-12 "> -->
+      <section>
+        <div class="well" style="width: 100%;">
+        <form role="form">
+          <div class="form-group">
+            <label for="firstname" class="col-md-2">
+              First Name:
+            </label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" onblur="toUpper(this.value);">
+            </div>
+          
+          </div>
+       
+          <div class="form-group">
+            <label for="lastname" class="col-md-2">
+              Last Name:
+            </label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" onblur="toUpper(this.value);">
+            </div>
+       
+       
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-2">
+              Student's ID:
+            </label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="lastname" placeholder="Enter Student ID" onkeypress="return isNumberKey(event)">
+            </div>
+       
+       
+          </div>
+          <div class="form-group">
+                <label class="col-md-2">
+                  Birthday:
+                </label>
+                <div class="col-md-10">
+                  <input type="text" class="form-control"  data-date-format="mm/dd/yy" id="dp2" style="width: 10%" placeholder="&#57347; Date">
+                </div>
+          </div>
+
+          <div class="form-group">
+            <label for="sex" class="col-md-2">
+              Gender:
+            </label>
+            <div class="col-md-10">
+              <label class="radio">
+                <input type="radio" name="sex" id="sex" value="male" checked>
+                Male
+              </label>
+              <label class="radio">
+                <input type="radio" name="sex" id="sex" value="female">
+                Female
+              </label>
+            </div>
+       
+          <div class="form-group">
+            <label class="col-md-2">
+              Mobile #:
+            </label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="mobile" placeholder="Enter Mobile Number" onkeypress="return isNumberKey(event)">
+            </div>
+       
+       
+          </div>
+
+          </div>
+          <div class="form-group">
+            <label for="emailaddress" class="col-md-2">
+              Email address:
+            </label>
+            <div class="col-md-10">
+              <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
+              <p class="help-block">
+                Example: yourname@domain.com
+              </p>
+            </div>
+       
+       
+          </div>
+       
+          <div class="form-group">
+            <label for="password" class="col-md-2">
+              Password:
+            </label>
+            <div class="col-md-10">
+              <input type="password" class="form-control" id="password" placeholder="Enter Password">
+              <p class="help-block">
+                Min: 6 characters (Alphanumeric only)
+              </p>
+            </div>
+       
+       
+          </div>
+       
+<!--        
+       
+          <div class="form-group">
+            <label for="uploadimage" class="col-md-2">
+              Upload Image:
+            </label>
+            <div class="col-md-10">
+              <input type="file" name="uploadimage" id="uploadimage">
+              <p class="help-block">
+                Allowed formats: jpeg, jpg, gif, png
+              </p>
+            </div>
+       
+       
+          </div> 
+       
+          <div class="checkbox">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+              <label>
+                <input type="checkbox">Terms and Conditions</label>
+            </div>
+       
+       
+          </div>
+          -->
+       
+          <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+              <button type="submit" class="btn btn-info">
+                Register
+              </button>
+            </div> <!-- end col-md-10 -->
+          </div>
+          </form> <!-- end form tag -->
+        <!-- </div> -->
+      </section>
+    </div>
+  </div>
+ 
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-1.10.2.min.js"></script>
+ 
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+    <SCRIPT language=Javascript>
+      
+       function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+       }
+       
+    </SCRIPT>
+    <script src="bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        function toUpper(mystring) {
+        var sp = mystring.split(' ');
+        var wl=0;
+        var f ,r;
+        var word = new Array();
+        for (i = 0 ; i < sp.length ; i ++ ) {
+        f = sp[i].substring(0,1).toUpperCase();
+        r = sp[i].substring(1);
+        word[i] = f+r;
+        }
+        newstring = word.join(' ');
+        document.getElementById('keyword').value = newstring;
+        return true;
+        }
+    </script>
+  <script>
+  if (top.location != location) {
+    top.location.href = document.location.href ;
+  }
+    $(function(){
+      window.prettyPrint && prettyPrint();
+      $('#dp2').datepicker();
+
+      
+      
+      var startDate = new Date(2012,1,20);
+      var endDate = new Date(2012,1,25);
+ 
+
+        // disabling dates
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+        var checkin = $('#dpd1').datepicker({
+          onRender: function(date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+          }
+        }).on('changeDate', function(ev) {
+          if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate() + 1);
+            checkout.setValue(newDate);
+          }
+          checkin.hide();
+          $('#dpd2')[0].focus();
+        }).data('datepicker');
+        var checkout = $('#dpd2').datepicker({
+          onRender: function(date) {
+            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+          }
+        }).on('changeDate', function(ev) {
+          checkout.hide();
+        }).data('datepicker');
+    });
+
+  </script>
+  </div>
+  </body>
+</html>
