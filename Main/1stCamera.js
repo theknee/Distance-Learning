@@ -1,4 +1,4 @@
-var videoElement = document.querySelector("video#maoni2");
+var videoElement = document.querySelector("video#camera2");
 var audioSelect = document.querySelector("select#audioSource");
 var videoSelect = document.querySelector("select#videoSource");
 
