@@ -10,7 +10,7 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<style type="text/css">
-
+		
 		.box1{
 			background-color: blue;
 			height: 500px;
@@ -42,8 +42,7 @@
 	    background-color: blue;
 		}
 		.camera2{
-			background-color: magenta;
-			
+			background-color: pink;
 		}
 
 		.container1{
@@ -53,7 +52,7 @@
 			border-radius: 5px;
 		}
 
-
+			
 	</style>
 
 </head>
@@ -86,7 +85,7 @@
 						        <li class="divider"></li>
 						        <li><a href="#">Separated link</a></li>
 						    </ul>
-
+						
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -97,7 +96,7 @@
 				</ul>
 			</div>
 
-
+			
 		</div>
 	</header>
 
@@ -118,7 +117,7 @@
 	    								<label for='videoSource'>Video source: </label><select id='videoSource'></select>
 	  								</div>
 									<video muted autoplay id='camera2' class="camera2"></video>
-
+	    							
 	    						<!-- </div> -->
     						</div>
 							<!-- insert camera 1 -->
@@ -177,6 +176,7 @@
 					<button type="button" class="btn btn-warning">
 						<span class="glyphicon glyphicon-record">
 						</span> Record
+
 					</button>
 					<button type="button" class="btn btn-warning">
 						<span class="glyphicon glyphicon-floppy-save"></span> 
@@ -194,22 +194,22 @@
 			</div>
 		<!-- </div> -->
 	</footer>
-
+	
 
 	<!-- Scripts -->
 	<script>
 		 var video = document.querySelector("#ppt");
-
+		 
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
-
+		 
 		if (navigator.getUserMedia) {      
 		    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
 		}
-
+		 
 		function handleVideo(stream) {
 		    video.src = window.URL.createObjectURL(stream);
 		}
-
+		 
 		function videoError(e) {
 		    console.log("error");
 		}
@@ -251,7 +251,7 @@
 					var temp;
 					if (camera1Class=="camera2") 
 					{
-
+						
 						ppt.className = camera1Class;
 						camera1.className = pptClass;
 						// alert("Change");
@@ -276,7 +276,7 @@
 					var temp;
 					if (camera1Class=="ppt") 
 					{
-
+						
 						ppt.className = camera1Class;
 						camera1.className = pptClass;
 						// alert("Change");
