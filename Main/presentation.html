@@ -116,6 +116,7 @@
 									<div class='select'>
 	    								<label for='videoSource'>Video source: </label><select id='videoSource'></select>
 	  								</div>
+	  								
 									<video muted autoplay id='camera2' class="camera2"></video>
 	    							
 	    						<!-- </div> -->
@@ -173,7 +174,7 @@
 						 PPT
 					</button>
 					<vr/>
-					<button type="button" class="btn btn-warning">
+					<button type="button" class="btn btn-warning" onclick="stop()">
 						<span class="glyphicon glyphicon-record">
 						</span> Record
 
@@ -198,11 +199,11 @@
 
 	<!-- Scripts -->
 	<script>
-		 var video = document.querySelector("#ppt");
+		 var video = document.querySelector(".ppt");
 		 
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 		 
-		if (navigator.getUserMedia) {      
+		if (navigator.getUserMedia) {    
 		    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
 		}
 		 
@@ -211,11 +212,49 @@
 		}
 		 
 		function videoError(e) {
-		    console.log("error");
+		    console.log("error:");
 		}
 
 	</script>
 	<script type="text/javascript">
+			function show(){
+				var video = document.querySelector(".ppt");
+		 
+					navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+					 
+					if (navigator.getUserMedia) {      
+					    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
+					}
+					 
+					function handleVideo(stream) {
+					    video.src = window.URL.createObjectURL(stream);
+					}
+					 
+					function videoError(e) {
+					    console.log("error");
+					}
+						
+				}
+		function stop(){
+				var video = document.querySelector(".ppt");
+		 
+					navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+					 
+					if (navigator.getUserMedia) {      
+					    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
+					}
+					 
+					function handleVideo(stream) {
+					    video.pause();
+					    video.src="";
+					}
+					 
+					function videoError(e) {
+					    console.log("error");
+					}
+						
+				}
+			
 				function camera1(element)
 				{
 					var camera1 = document.getElementById("camera1"),
@@ -228,14 +267,18 @@
 					//alert(camera1Class);
 					if (camera1Class=="camera1") 
 					{
+						stop();
 						ppt.className = camera1Class;
 						camera1.className = pptClass;
+						show();
 						// alert("Change");
 					}
 					else if(camera2Class=="camera1")
 					{
+						stop();
 						ppt.className= camera2Class;
 						camera2.className= pptClass;
+						show();
 						// alert("Change");
 					}
 
@@ -251,16 +294,19 @@
 					var temp;
 					if (camera1Class=="camera2") 
 					{
-						
+						stop();
 						ppt.className = camera1Class;
 						camera1.className = pptClass;
+						show();
 						// alert("Change");
 
 					}
 					else if(camera2Class=="camera2")
 					{
+						stop();
 						ppt.className = camera2Class;
 						camera2.className = pptClass;
+						show();
 						// alert("Change");
 					}
 
@@ -276,16 +322,19 @@
 					var temp;
 					if (camera1Class=="ppt") 
 					{
-						
+						stop();
 						ppt.className = camera1Class;
 						camera1.className = pptClass;
+						show();
 						// alert("Change");
 
 					}
 					else if(camera2Class=="ppt")
 					{
+						stop();
 						ppt.className = camera2Class;
 						camera2.className = pptClass;
+						show();
 						// alert("Change");
 					}
 					// else

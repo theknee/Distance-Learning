@@ -1,4 +1,4 @@
-var videoElement2 = document.querySelector("video#camera1");
+var videoElement2 = document.querySelector("video.camera1");
 var audioSelect2 = document.querySelector("select#audioSource2");
 var videoSelect2 = document.querySelector("select#videoSource2");
 
