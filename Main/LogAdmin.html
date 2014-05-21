@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shorcut icon" href="images/favicon.ico">
+    <title>Distance Learning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="LogAdmin.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-contents">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="#" class="navbar-brand"><span class="glyphicon glyphicon-user"> I R Y N E</span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-contents">
+				<ul class="nav navbar-nav" role="navigation">
+					<li><a href="#">IMAGES</a></li>
+					<li><a href="#">VIDEOS</a></li>
+				</ul>
+				<ul class=" nav navbar-right" role="navigation">
+					<li><button class="btn btn-primary btn-right" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/Register</button></li>
+				</ul>
+			</div>
+
+			
+		</div>
+	</header>
+
+
+<div class="container" id="TheCarousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ul class="nav nav-pills nav-justified">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">ABOUT<small>Why is this made?</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="1"><a href="#">PROJECTS<small>Project Iryne</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="2"><a href="#">RESOURCES<small>Bootstrap|JavaScript|CSS</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="3"><a href="#">SUPPORT<small>Help us?</small></a></li>
+        </ul>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+      
+        <div class="item active">
+          <img src="images/CarImage1.jpg">
+           <div class="carousel-caption">
+            <h3>Why is this made?</h3>
+            <p>This project was made to improve the way of teaching in the whole world. To extend the teaching not only on local civilians but also those poeple who are distant from leaning infastructures.</p>
+            <p><a href="#" target="_blank" class="label label-danger">Learn More!</a></p>
+          </div>
+        </div><!-- End Item -->
+ 
+         <div class="item">
+          <img src="images/CarImage2.jpg">
+           <div class="carousel-caption">
+            <h3>Project Iryne</h3>
+            <p>Project Iryne is also made for the compliance of a thesis project. </p>
+            <p><a href="#" target="_blank" class="label label-danger">Check out other projects!</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="images/CarImage3.jpg">
+           <div class="carousel-caption">
+            <h3>Bootstrap|Javascript|CSS</h3>
+            <p>In order to enhance the site, advanced tools are used for the convenience of the users. </p>
+            <p><a href="#" target="_blank" class="label label-danger">Check out the resources!</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="images/CarImage4.jpg">
+           <div class="carousel-caption">
+            <h3>Help us?</h3>
+            <p>You can donate piso piso per minuto by texting "I'm Home!" and send to 666.</p>
+            <p><a href="#" target="_blank" class="label label-danger">How to donate seriously?!</a></p>
+          </div>
+        </div><!-- End Item -->
+                
+      </div><!-- End Carousel Inner -->
+
+    </div><!-- End Carousel -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  	<div class="modal-dialog modal-sm">
+    	<div class="modal-content">
+       		 <br>
+        	<div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+              <li class=""><a href="#signup" data-toggle="tab">Join Now!</a></li>
+            </ul>
+        </div>
+      	<div class="modal-body">
+        	<div id="myTabContent" class="tab-content">
+        	<div class="tab-pane fade active in" id="signin">
+            	<form class="form-horizontal">
+            	<fieldset>
+            <!-- Sign In Form -->
+            	<div class="control-group">
+              		<div class="input-group controls">
+              			<span class="input-group-addon">
+              				<span class="glyphicon glyphicon-user"></span>
+              			</span>
+               			<input required="" id="userid" name="userid" type="text" class="form-control" placeholder="Username" class="input-medium" required="">
+              		</div>
+            	</div>
+
+            <!-- Password input--><br>
+            	<div class="control-group">
+              		<div class="input-group controls">
+              			<span class="input-group-addon">
+              				<span class="glyphicon glyphicon-lock"></span>
+              			</span>
+                		<input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="Passcode" class="input-medium">
+              		</div>
+            	</div>
+
+            <!-- Button -->
+            <div class="control-group">
+              <label class="control-label" for="signin"></label>
+              <div class="controls">
+                <button id="signin" name="signin" class="btn btn-success">I'm Home!</button>
+              </div>
+            </div>
+            </fieldset>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="signup">
+            <form class="form-horizontal">
+            <fieldset>
+            <!-- Sign Up Form -->
+
+            <!-- Text input-->
+            <div class="control-group">
+              <div class="input-group controls">
+              			<span class="input-group-addon">
+              				<span class="glyphicon glyphicon-user"></span>
+              			</span>
+                <input id="userid" name="userid" class="form-control" type="text" placeholder="Username" class="input-large" required="">
+              </div>
+            </div>
+            
+            <!-- Password input--><br>
+            <div class="control-group">
+              <div class="input-group controls">
+              			<span class="input-group-addon">
+              				<span class="glyphicon glyphicon-lock"></span>
+              			</span>
+                <input id="password" name="password" class="form-control" type="password" placeholder="Passcode" class="input-large" required="">
+              </div>
+            </div>
+            
+            <!-- Text input--><br>
+            <div class="control-group">
+              <div class="input-group controls">
+              			<span class="input-group-addon">
+              				<span class="glyphicon glyphicon-lock"></span>
+              			</span>
+                <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="Confirm Passcode" class="input-large" required="">
+              </div>
+            </div>
+            
+            <!-- Text input--><br>
+            <div class="control-group">
+              <div class="input-group controls">
+              			<span class="input-group-addon">
+              				<span class="glyphicon glyphicon-envelope"></span>
+              			</span>
+                <input id="Email" name="Email" class="form-control" type="text" placeholder="Email Address" class="input-large" required="">
+              </div>
+            </div>
+
+
+            <!-- Button -->
+            <div class="control-group">
+              <label class="control-label" for="confirmsignup"></label>
+              <div class="controls">
+                <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Join Now!</button>
+              </div>
+            </div>
+            </fieldset>
+            </form>
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+      <center>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- For Video Suggestions -->
+<br>
+<div class="container" id="Related-Videos">
+    <div class="row">
+		<div class="well">
+        <h4 class="text-left">Recently added videos:</h4>
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+                <div class="media col-md-3">
+                    <figure class="pull-left">
+                        <img class="media-object img-rounded img-responsive"  src="http://placehold.it/350x200" alt="placehold.it/350x200" >
+                    </figure>
+                </div>
+                <div class="col-md-7">
+                    <h3 class="list-group-item-heading"> Pa char char video. </h3>
+                    <p class="list-group-item-text text-muted">Wa lang. trip lang nako i input ni.</p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <h6> 1,400,872 <small> views </small></h6>
+                    <button type="button" class="btn btn-primary btn-sm btn-block">Update Video  </button>
+                </div>
+          </a>
+          <a href="#" class="list-group-item">
+                <div class="media col-md-3">
+                    <figure class="pull-left">
+                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x200" alt="placehold.it/350x200" >
+                    </figure>
+                </div>
+                <div class="col-md-7">
+                    <h3 class="list-group-item-heading"> Pa char char video. </h3>
+                    <p class="list-group-item-text text-muted">Wa lang. trip lang nako i input ni.</p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <h6> 1,400,872 <small> views </small></h6>
+                    <button type="button" class="btn btn-primary btn-sm btn-block">Update Video  </button>
+                </div>
+          </a>
+          <a href="#" class="list-group-item">
+                <div class="media col-md-3">
+                    <figure class="pull-left">
+                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x200" alt="placehold.it/350x200">
+                    </figure>
+                </div>
+                <div class="col-md-7">
+                    <h3 class="list-group-item-heading"> Pa char char video. </h3>
+                    <p class="list-group-item-text text-muted">Wa lang. trip lang nako i input ni.</p>
+                </div>
+                <div class="col-md-2 text-center">
+                    <h6> 1,400,872 <small> views </small></h6>
+                    <button type="button" class="btn btn-primary btn-sm btn-block">Update Video  </button>
+                </div>
+          </a>
+        </div>
+        </div>
+	</div>
+</div>
+
+
+<!-- Scripts -->
+<script type="text/javascript">
+$(document).ready( function() {
+    $('#myCarousel').carousel({
+		interval:   4000
+	});
+	
+	var clickEvent = false;
+	$('#myCarousel').on('click', '.nav a', function() {
+			clickEvent = true;
+			$('.nav li').removeClass('active');
+			$(this).parent().addClass('active');		
+	}).on('slid.bs.carousel', function(e) {
+		if(!clickEvent) {
+			var count = $('.nav').children().length -1;
+			var current = $('.nav li.active');
+			current.removeClass('active').next().addClass('active');
+			var id = parseInt(current.data('slide-to'));
+			if(count == id) {
+				$('.nav li').first().addClass('active');	
+			}
+		}
+		clickEvent = false;
+	});
+});</script>
+<!-- End of scripts -->
+
+</body>
+
+</html>
