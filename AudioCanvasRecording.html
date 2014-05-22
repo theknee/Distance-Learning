@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>JS Bin</title>
-  <title>Audio + Canvas2D/HTML recording using RecordRTC!</title>
+<title>Audio + Canvas2D/HTML recording using RecordRTC!</title>
 <style>
     body {overflow-x:hidden;background: rgb(233, 233, 233);}
     #elementToShare {
         background: rgb(233, 233, 233);
-        height: 75%;
+        font-size: 2em;
+        height: 100%;
         left: 0;
-        padding: 0 2px;
+        padding: 0 1em;
         position: absolute;
         top: 0;
-        width: 75%;
+        width: 100%;
     }
+
+    input, textarea {
+        border: 1px solid red;
+        font-size: 1em;
+        outline: none;
+        padding: .3em .8em;
+    }
+
     button, input[type=button] {
         -moz-border-radius: 3px;
         -moz-transition: none;
@@ -54,26 +58,28 @@
     a:active { color: #000; }
 </style>
 
-<div id="elementToShare" style="margin-top:8px;">
+<div id="elementToShare" class="col-lg-8 col-xs-8 col-sm-8" style="margin-top:3px;">
   <video autoplay="true" id="videoElement"></video>
 </div>
      
 <div style="position: fixed;top;0;left: 20%;right: 20%;text-align: center;">
     <button id="start" contenteditable="false">Start </button>
     <button id="stop" disabled contenteditable="false">Stop</button>
-   <h2>
-        AudioCanvas2D/HTMLrecording <br />
-    </h2>
+   <button id="download-url" disabled>
+        Save <br />
+    </button
 </div>
 
 <script src="https://www.webrtc-experiment.com/screenshot.js"> </script>
 <script src="https://www.webrtc-experiment.com/RecordRTC.js"> </script>
-</head>
-<body>
-      <script>
+
+<script>
 var elementToShare = document.getElementById('elementToShare');
 var canvasRecorder = RecordRTC(elementToShare, {
-    type: 'canvas'
+    type: 'canvas',
+  frameRate: 200,
+   quality: 10,
+  bufferSize: 16384
 });
 
 var recordAudio;
@@ -175,26 +181,32 @@ function convertStreams(videoBlob, audioBlob) {
         posted = true;
 
         worker.postMessage({
-            type: 'command',
-            arguments: ['-i', 'video.webm', '-i', 'audio.wav', '-c:v', 'mpeg4', '-c:a', 'vorbis', '-b:v', '64k', '-b:a', '12k', '-strict', 'experimental', 'output.mp4'],
-            files: [
-                {
-                    data: new Uint8Array(vab),
-                    name: 'video.webm'
-                },
-                {
-                    data: new Uint8Array(aab),
-                    name: "audio.wav"
-                }
-            ]
-        });
+    type: 'command',
+    arguments: ['-i', 'video.webm',
+        '-i', 'audio.wav',
+        '-c:v', 'mpeg4',
+        '-c:a', 'vorbis',
+        '-b:v', '9600k',
+        '-b:a', '128k',
+        '-strict', 'experimental', 'output.mp4'
+    ],
+    files: [{
+        data: new Uint8Array(vab),
+        name: 'video.webm'
+    }, {
+        data: new Uint8Array(aab),
+        name: "audio.wav"
+    }]
+});
     };
 }
 
-var h2 = document.querySelector('h2');
+//var h2 = document.querySelector('h2');
+ var h2 = document.getElementById('download-url');
 
 function PostBlob(blob) {
-    h2.innerHTML = '<a href="' + URL.createObjectURL(blob) + '" target="_blank" download="RecordedAudioCanvas.mp4">Download Recorded Audio+Canvas file in MP4 container and play in VLC player!</a>';
+    h2.innerHTML = '<a href="' + URL.createObjectURL(blob) + '" target="_blank" download="RecordedAudioCanvas.mp4">Save</a>';
+   document.getElementById('download-url').disabled = false;
     //h2.setAttribute('contenteditable', 'false');
 }
 
@@ -218,6 +230,5 @@ function log(message) {
             alert('ERROR');
         }
 
-  </script>
-</body>
-</html>
+
+</script>
