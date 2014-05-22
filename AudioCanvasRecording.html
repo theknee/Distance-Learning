@@ -63,11 +63,9 @@
 </div>
      
 <div style="position: fixed;top;0;left: 20%;right: 20%;text-align: center;">
-    <button id="start" contenteditable="false">Start </button>
-    <button id="stop" disabled contenteditable="false">Stop</button>
-   <button id="download-url" disabled>
-        Save <br />
-    </button
+    <button id="start">Start </button>
+    <button id="stop" disabled>Stop </button>
+    <button id="download-url" disabled>Save </button>
 </div>
 
 <script src="https://www.webrtc-experiment.com/screenshot.js"> </script>
@@ -77,9 +75,6 @@
 var elementToShare = document.getElementById('elementToShare');
 var canvasRecorder = RecordRTC(elementToShare, {
     type: 'canvas',
-  frameRate: 200,
-   quality: 10,
-  bufferSize: 16384
 });
 
 var recordAudio;
