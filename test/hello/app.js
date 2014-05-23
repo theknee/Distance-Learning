@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+//connect to mongodb route
 app.use('/mongoCon', mongoCon);
 
 /// catch 404 and forward to error handler

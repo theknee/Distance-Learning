@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Prototype</title>
+
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<style type="text/css">
+		
+		.box1{
+			background-color: blue;
+			height: 500px;
+			width: 100%;
+		}
+		body{
+			padding-top: 70px;
+		}
+		#container {
+	    margin: 0px auto;
+	    position: absolute;
+	    top: 60px;
+	    left: 20%;
+	    width: 500px;
+	    height: 500px;
+	    border: 10px #333 solid;
+	    border-radius: 5px;
+		}
+		.ppt {
+	/*	position: absolute;
+		top: 400px;*/
+	    width: 100%;
+	    height: 85%;
+	    background-color: green;
+		}
+		.camera1, .camera2 {
+	    width: 100%;
+	    height: 85%;
+	    background-color: blue;
+		}
+		.camera2{
+			background-color: pink;
+		}
+
+		.container1{
+			width: 400px;
+			height: 350px;
+			border: 10px #333 solid;
+			border-radius: 5px;
+		}
+
+			
+	</style>
+
+</head>
+<body>
+<div class="container">
+	<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-contents">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="#" class="navbar-brand">OJT  <span class="glyphicon glyphicon-user"></span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-contents">
+				<ul class="nav navbar-nav" role="navigation">
+					<li><a href="#">HOME</a></li>
+					<li><a href="http://www.facebook.com">VIDEOS</a></li>
+					<li><a href="#">ASDAS</a></li>
+					<li><a href="#">BLA</a></li>
+					<li><a href="#">ABL</a></li>
+					<li>
+						<a data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></a>
+						    <ul class="dropdown-menu">
+						        <li><a href="#">Action</a></li>
+						        <li><a href="#">Another action</a></li>
+						        <li class="divider"></li>
+						        <li><a href="#">Separated link</a></li>
+						    </ul>
+						
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="">Sign Out</a></li>
+					<li>
+						<button class="btn btn-warning navbar-btn btn-sm">Chuva</button>
+					</li>
+				</ul>
+			</div>
+
+			
+		</div>
+	</header>
+
+	<div class="container-fluid">
+		<section>
+			<div class="well well-lg text-center">
+				<div class="row">
+					<aside class="col-lg-4 col-xs-4 col-sm-4">
+						<div class="row">
+							<div class="col-lg-12 col-xs-12 col-sm-12 ">
+							<!-- 	<div id="webcam1"></div> -->
+							<div class="container1">
+								<!-- <div class = 'panel'> -->
+	  								<div class='select'>
+	    								<label for='audioSource'>Audio source: </label><select id='audioSource'></select>
+	  								</div>
+									<div class='select'>
+	    								<label for='videoSource'>Video source: </label><select id='videoSource'></select>
+	  								</div>
+	  								
+									<video muted autoplay id='camera2' class="camera2"></video>
+	    							
+	    						<!-- </div> -->
+    						</div>
+							<!-- insert camera 1 -->
+							</div>
+						</div>
+						<br/>
+						<div class="row">
+							<div class="col-lg-12 col-xs-12 col-sm-12">
+								<!--  <div id="webcam"></div> -->
+							<div class="container1">
+							  <!--   <div class = 'panel'> -->
+									<div class='select'>
+    									<label for='audioSource2'>Audio source: </label><select id='audioSource2'></select>
+    								</div>
+  									<div class='select'>
+    									<label for='videoSource2'>Video source: </label><select id='videoSource2'></select>
+ 									</div>
+
+									<video muted autoplay id='camera1' class = "camera1"></video>
+    								
+								<!-- </div> -->
+							</div>	
+								<!-- insert camera2 -->
+							</div>
+						</div>
+					</aside>
+						<div class="col-lg-8 col-xs-8 col-sm-8">
+							<div id="container">
+								<!-- <video autoplay="true" id="videoElement1"></video> -->
+
+
+								<video autoplay="true" id="ppt" class="ppt"></video>
+								<!-- recording canvas -->
+							</div>	
+						</div>
+				</div>	
+
+				<br/>
+				<hr/>
+				<br/>
+				<div class="container">
+					<button type="button" class="btn " onclick="camera1(this)">
+						<span class="glyphicon glyphicon-camera"></span>
+							Camera 1
+					</button>
+
+					<button type="button" class="btn " onclick="camera2(this)">
+						<span class="glyphicon glyphicon-camera"></span>
+						Camera 2
+					</button>
+					<button type="button" class="btn" onclick="ppt(this)"> 
+						<span class="glyphicon glyphicon-file"></span>
+						 PPT
+					</button>
+					<vr/>
+					<button type="button" class="btn btn-warning" onclick="stop()">
+						<span class="glyphicon glyphicon-record">
+						</span> Record
+
+					</button>
+					<button type="button" class="btn btn-warning">
+						<span class="glyphicon glyphicon-floppy-save"></span> 
+						Save
+					</button>
+				</div>			
+			</div>
+		</section>		
+	</div>
+</div>
+	<footer>
+		<!-- <div class="container-fluid"> -->
+			<div class="well well-inverse">
+				<h1 align="center">Footer ni Siya!</h1>
+			</div>
+		<!-- </div> -->
+	</footer>
+	
+
+	<!-- Scripts -->
+	<script>
+		 var video = document.querySelector(".ppt");
+		 
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+		 
+		if (navigator.getUserMedia) {    
+		    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
+		}
+		 
+		function handleVideo(stream) {
+		    video.src = window.URL.createObjectURL(stream);
+		}
+		 
+		function videoError(e) {
+		    console.log("error:");
+		}
+
+	</script>
+	<script type="text/javascript">
+			function show(){
+				var video = document.querySelector(".ppt");
+		 
+					navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+					 
+					if (navigator.getUserMedia) {      
+					    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
+					}
+					 
+					function handleVideo(stream) {
+					    video.src = window.URL.createObjectURL(stream);
+					}
+					 
+					function videoError(e) {
+					    console.log("error");
+					}
+						
+				}
+		function stop(){
+				var video = document.querySelector(".ppt");
+		 
+					navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+					 
+					if (navigator.getUserMedia) {      
+					    navigator.getUserMedia({video: true, audio: true}, handleVideo, videoError);
+					}
+					 
+					function handleVideo(stream) {
+					    video.pause();
+					    video.src="";
+					}
+					 
+					function videoError(e) {
+					    console.log("error "+ e);
+					}
+						
+				}
+			
+				function camera1(element)
+				{
+					var camera1 = document.getElementById("camera1"),
+						camera2 = document.getElementById("camera2"),
+						ppt = document.getElementById("ppt"),
+						pptClass = ppt.className,
+						camera1Class = camera1.className,
+						camera2Class = camera2.className;
+					var temp;
+					//alert(camera1Class);
+					if (camera1Class=="camera1") 
+					{
+						stop();
+						ppt.className = camera1Class;
+						camera1.className = pptClass;
+						show();
+						// alert("Change");
+					}
+					else if(camera2Class=="camera1")
+					{
+						stop();
+						ppt.className= camera2Class;
+						camera2.className= pptClass;
+						show();
+						// alert("Change");
+					}
+
+				}
+				function camera2(element)
+				{
+					var camera1 = document.getElementById("camera1"),
+						camera2 = document.getElementById("camera2"),
+						ppt = document.getElementById("ppt"),
+						pptClass = ppt.className,
+						camera1Class = camera1.className,
+						camera2Class = camera2.className;
+					var temp;
+					if (camera1Class=="camera2") 
+					{
+						stop();
+						ppt.className = camera1Class;
+						camera1.className = pptClass;
+						show();
+						// alert("Change");
+
+					}
+					else if(camera2Class=="camera2")
+					{
+						stop();
+						ppt.className = camera2Class;
+						camera2.className = pptClass;
+						show();
+						// alert("Change");
+					}
+
+				}
+				function ppt(element)
+				{
+					var camera1 = document.getElementById("camera1"),
+						camera2 = document.getElementById("camera2"),
+						ppt = document.getElementById("ppt"),
+						pptClass = ppt.className,
+						camera1Class = camera1.className,
+						camera2Class = camera2.className;
+					var temp;
+					if (camera1Class=="ppt") 
+					{
+						stop();
+						ppt.className = camera1Class;
+						camera1.className = pptClass;
+						show();
+						// alert("Change");
+
+					}
+					else if(camera2Class=="ppt")
+					{
+						stop();
+						ppt.className = camera2Class;
+						camera2.className = pptClass;
+						show();
+						// alert("Change");
+					}
+					// else
+					// 	alert("no change");
+				}
+
+
+	</script>
+	<script type="text/javascript">
+		console.log("wew")
+	</script>
+	<script src='1stCamera.js' type='text/javascript'></script>   
+	<script src='2ndCamera.js' type='text/javascript'></script>
+	<script src='js/jquery-1.10.2.min.js' type='text/javascript'></script>
+	<script src='js/bootstrap.min.js' type='text/javascript'></script>
+
+</body>
+</html>
