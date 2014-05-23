@@ -2,15 +2,10 @@ var express = require( 'express' );
 var http = require( 'http' );
 var fs = require( 'fs' );
 var app = express();
-var Server = require( 'mongodb' ).Server;
-var Db = require( 'mongodb' ).Db;
-var server = new Server( 'localhost', 27017, { 
-	auto_reconnect : true 
-} );
 
-/*
-app.get( '/', function( req, res ){
 
+app.get( '/', function(  req, res ){
+	console.log( req.pathname );
 	res.send( req.url );
 
 });
@@ -19,9 +14,9 @@ app.get( '/', function( req, res ){
 
 http.createServer( app ).listen( 1234 );
 console.log( 'sever listening at port 1234' );
-*/
 
-///*
+
+/*
 //get html request and connect to database
 
 var server = http.createServer( function( request, response ) {
@@ -47,4 +42,4 @@ var server = http.createServer( function( request, response ) {
 
 server.listen( 1337 );
 console.log( 'server listening at port 1337' );
-//*/
+*/
