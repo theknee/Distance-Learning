@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shorcut icon" href="images/favicon.ico">
+    <title>Distance Learning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="AdminEditVid.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper" class="active">
+      
+      <!-- Sidebar -->
+            <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+      <ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">IRYNE<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+      </ul>
+        <ul class="sidebar-nav" id="sidebar">     
+          <li><a>Home<span class="sub_icon glyphicon glyphicon-home"></span></a></li>
+          <li><a>Profile<span class="sub_icon glyphicon glyphicon-user"></span></a></li>
+          <li><a>Analysis<span class="sub_icon glyphicon glyphicon-stats"></span></a></li>
+          <li><a>Log Out<span class="sub_icon glyphicon glyphicon-off"></span></a></li>
+          <li><a>Settings<span class="sub_icon glyphicon glyphicon-cog"></span></a></li>
+        </ul>
+      </div>
+          
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+        	<!-- @@@@@@@@@@@@@@ Start Here! -->
+        	<br>
+        	<div class="container well">
+        		
+        		<div class="panel panel-primary">
+        			<div class="panel-heading">
+        				<h3 class="panel-title"> Name of the video </h3>
+        			</div>
+        			<div class="panel-body">
+        				<div class="form-group">
+        					<div class="input-group">
+           									<div class="input-group image-preview">
+           										<span class="input-group-addon">URL</span>
+                								<input type="text" class="form-control image-preview-filename" disabled="disabled"/>
+                								<span class="input-group-btn">
+                    								<button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                        								<span class="glyphicon glyphicon-remove"></span> Clear
+                    								</button>
+                    								<div class="btn btn-default image-preview-input">
+                        								<span class="glyphicon glyphicon-folder-open"></span>
+                        								<span class="image-preview-input-title">Browse</span>
+                        								<input type="file" accept="video/mp4, video/flv, video/avi"/>
+                    								</div>
+                								</span>
+            								</div>
+        					</div>
+						</div>
+        				<div class="form-group">
+        					<div class="input-group">
+        						<span class="input-group-addon">Video Title</span>
+        						<input type="text" class="form-control" placeholder="Video Title">
+        					</div>
+						</div>
+        				<div class="form-group">
+        					<div class="input-group">
+        						<span class="input-group-addon">Description</span>
+        						<input type="text" class="form-control" placeholder="What's with the video?">
+        					</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+        						<h3 class="panel-title">
+        							<a data-toggle="collapse" href="#ProgColl">Who can see this video?</a>
+        						</h3>
+        					</div>
+        					<div class="pnael-collapse collapse in"id="ProgColl">
+        					<div class="panel-body">
+        						<div class="rows">
+        							<div class="col-md-6">
+        								<h3><span class="label label-info">Programs</span></h3>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Comp-Eng">Vulcanizing Engineering
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Mech-Eng">Janitorial Engineering
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Chem-Eng">Vending Engineering
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Elec-Eng">Barbecue Engineering
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Indus-Eng">Boxing Engineering
+										</label>
+									</div>
+									<div class="col-md-6">
+										<h3><span class="label label-info">Subject</span></h3>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Comp-Eng">EE214 (Electronics II)
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Mech-Eng">Math8 (Prob. and Stat.)
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Chem-Eng">Math7 (Discrete Mathematics)
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Elec-Eng">Math9 (Janitor's Mathematics)
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="programs" value="Indus-Eng">Den533 (1 Min. Rape Victim)
+										</label>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+            				<ul class="list-inline">
+            					
+            					<li><h4>Date</h4></li>
+                				<li>
+                    				<select class="form-control">
+                        				<option value="Month">January</option>
+                        				<option value="Month">February</option>
+                        				<option value="Month">March</option>
+                        				<option value="Month">April</option>
+                        				<option value="Month">May</option>
+                        				<option value="Month">June</option>
+                        			</select>
+                				</li>
+                				<li >
+                    				<select class="form-control">
+                        				<option value="Day">1</option>
+                        				<option value="Day">2</option>
+                        				<option value="Day">3</option>
+                    				</select>
+                				</li>
+                				<li>
+                    				<select class="form-control">
+                        				<option value="Year">1993</option>
+                        				<option value="Year">1994</option>
+                        				<option value="Year">1995</option>
+                    				</select>
+                				</li>
+                		
+                			</ul>
+                		</div>
+                		<div class="form-group">
+        					<div class="input-group">
+        						<span class="input-group-addon">Lecturer</span>
+        						<input type="text" class="form-control" placeholder="Jual dela Cruz">
+        					</div>
+						</div>
+
+        			</div>
+
+					<div class="panel-footer">
+						<center>
+      					<div class="ui-group-buttons">
+                			<a href="#" class="btn btn-info" role="button"><span class="glyphicon glyphicon-thumbs-up">Upload</span></a>
+                				<div class="or"></div>
+                			<a href="#" class="btn btn-warning" role="button">Discard<span class="glyphicon glyphicon-thumbs-down"></span></a>
+           				</div>
+           				</center>
+      				</div>
+
+        		</div>
+        	</div>
+			<!-- @@@@@@@@@@@@@@ Ends Here! @@@@@@@@@@@@@@ -->
+		</div>
+     </div> <!-- /End Page content -->
+      
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript">
+	
+	$("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+	});
+
+	$(document).ready(function()
+	{		
+    	var navItems = $('.admin-menu li > a');
+    	var navListItems = $('.admin-menu li');
+    	var allWells = $('.admin-content');
+    	var allWellsExceptFirst = $('.admin-content:not(:first)');
+    
+   			allWellsExceptFirst.hide();
+    		navItems.click(function(e)
+  			{
+        		e.preventDefault();
+        		navListItems.removeClass('active');
+        		$(this).closest('li').addClass('active');
+        		allWells.hide();
+        		var target = $(this).attr('data-target-id');
+        		$('#' + target).show();
+    		});
+	});
+
+	function closePreview(){
+    $('.image-preview').popover('hide'); 
+	}
+
+	$(document).ready(function(){
+    // Set the close button
+    var closebtn = $('<button/>', {
+        type:"button",
+        text: 'x',
+        id: 'close-preview',
+        style: 'font-size: initial;',
+    });
+    closebtn.attr("class","close pull-right");
+    closebtn.attr("onclick","closePreview();");
+    // Set the popover default content
+    $('.image-preview').popover({
+        trigger:'manual',
+        html:true,
+        title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+        content: 'Loading...',
+        placement:'bottom'
+    });
+    // Set the clear onclick function
+    $('.image-preview-clear').click(function(){
+        $('.image-preview').popover('hide');
+        $('.image-preview-filename').val("");
+        $('.image-preview-clear').hide();
+        $('.image-preview-input input:file').val("");
+        $(".image-preview-input-title").text("Browse"); 
+    });
+	});
+
+	$(function() {
+    	$(".image-preview-input input:file").change(function (){
+        // Create the preview image 
+        var img = $('<img/>', {
+            id: 'dynamic',
+            width:250,
+            height:230
+        });      
+        var file = this.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(".image-preview-input-title").text("Change");
+            $(".image-preview-clear").show();
+            $(".image-preview-filename").val(file.name);            
+            // Set preview image into the popover data-content
+            img.attr('src', e.target.result);
+            $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+        }        
+        reader.readAsDataURL(file);
+    	});  
+	});
+
+</script>
+<!-- End of script -->
+
+</body>
+</html>
