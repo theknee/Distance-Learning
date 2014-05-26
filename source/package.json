@@ -1,19 +1,16 @@
 {
-  "name": "Distance_Learning",
+  "name": "index.js",
   "version": "0.0.0",
-  "description": "test project",
-  "main": "app.js",
-  "dependencies": {
-    "bootstrap": "0.0.2",
-    "css": "^1.6.0",
-    "express": "^3.4.8",
-    "mongodb": "^1.4.4",
-    "nodemon": "^1.0.19"
-  },
-  "devDependencies": {},
+  "description": "Distance Learning",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Project Iryne",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.3.1",
+    "mongodb": "^1.4.5",
+    "nodemon": "^1.0.20"
+  }
 }
