@@ -1,3 +1,5 @@
+
+//profile details
 {
 	"Login" : {
 		"username" : null,
@@ -15,4 +17,15 @@
 	"birthday" : null,
 	"contact_num" : null,
 	"email_add" : null
+}
+
+//video details
+{
+	"video_title" : null,
+	"url" : null,
+	"description" : null,
+	"programs" : [null],
+	"subject" : [null],
+	"date_created" : null,
+	"lecturer" : null
 }
