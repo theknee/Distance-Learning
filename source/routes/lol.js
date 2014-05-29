@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<p>Please input a number:</p>
-
-<input id="numb" type="text">
-
-<button type="button" onclick="myFunction()">Click Me!</button>
-
-<p id="demo"></p>
-
-<script src='./routes/lol.js' type='text/javascript'>
-/*
 function myFunction() {
     //Get the value of input field with id="numb"
     var val = document.getElementById("numb").value;
@@ -26,8 +12,3 @@ function myFunction() {
         elem.innerHTML = "Input OK";
     }
 }
-*/
-</script>
-
-</body>
-</html> 
